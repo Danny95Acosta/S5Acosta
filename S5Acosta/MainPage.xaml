@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="S5Acosta.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Menu de opciones" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <ListView x:Name="postListView" ItemSelected="postListView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Tapped="listCell_Tapped" x:Name="listCell">
+                        <StackLayout Spacing="80" x:Name="layoutcell" >
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition>
+                                        
+                                    </RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label x:Name="blnombre" Text="{Binding nombre}" Grid.Row="0" Grid.Column="0" FontSize="Medium"/>
+                                <Label x:Name="blapellido" Text="{Binding apellido}" Grid.Row="0" Grid.Column="1" FontSize="Medium"/>
+                            </Grid>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+
+
+        </ListView>
+        <Button x:Name="BtonPost" Text="Ingresar" Clicked="BtonPost_Clicked"/>
+        <Button x:Name="BtnEditar" Text="Editar" Clicked="BtnEditar_Clicked"/>
+        <Button x:Name="BtnEliminar" Text="Eliminar" Clicked="BtnEliminar_Clicked"/>
+    </StackLayout>
+
+</ContentPage>
